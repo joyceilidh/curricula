@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @curriculum.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @curriculum.description %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @curriculum.url %>
+</p>
+
+<p>
+  <strong>Affiliate url:</strong>
+  <%= @curriculum.affiliate_url %>
+</p>
+
+<p>
+  <strong>Create time:</strong>
+  <%= @curriculum.create_time %>
+</p>
+
+<%= link_to 'Edit', edit_curriculum_path(@curriculum) %> |
+<%= link_to 'Back', curriculums_path %>
