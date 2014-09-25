@@ -22,5 +22,9 @@ module Curricula
 
     # For not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    # for style tutorial
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
   end
 end
