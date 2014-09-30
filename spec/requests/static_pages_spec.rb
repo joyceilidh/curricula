@@ -1,35 +1,34 @@
 require 'spec_helper'
 
 describe "Static pages" do
-   puts "describe static pages block"
 
-  before(:each) do
-   puts "before each do block"
-    subject {page}
+  subject { page }
+
+  describe "Home page" do
     before { visit root_path }
+
+    it { should have_content('Curriculum') }
+    it { should have_title(full_title('')) }
   end
-  
-    describe "Home page" do
-    puts "Home page describe block"
-      it { should have_content('Welcome') }
-      it { should have_title('SIH | Home') }
-    end
 
-    describe "Help page" do
-    puts "Home page describe block"
-      it { should have_content('Help') }
-      it { should have_title('SIH | Help') }
-    end
+  describe "Help page" do
+    before { visit help_path }
 
-    describe "About page" do
-    puts "putting something out there"
-      it { should have_content('About') }
-      it { should have_title('SIH | About') }
-    end
+    it { should have_content('Help') }
+    it { should have_title(full_title('Help')) }
+  end
 
-    describe "Contact page" do
-    puts "putting something out there"
-      it { should have_content('Contact') }
-      it { should have_title('SIH | Contact') }
-    end
+  describe "About page" do
+    before { visit about_path }
+
+    it { should have_content('About') }
+    it { should have_title(full_title('About')) }
+  end
+
+  describe "Contact page" do
+    before { visit contact_path }
+
+    it { should have_content('Contact') }
+    it { should have_title(full_title('Contact')) }
+  end
 end
